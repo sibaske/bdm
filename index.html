@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сайт работает</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Поздравительный сайт для мамы — с анимацией, сердцами и музыкой." />
+  <title>с днм рождения </title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body style="margin:0;background:#000;color:white;height:100vh;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;text-align:center;">
-  <div>
-    <h1 style="font-size:60px;">Сайт работает ❤️</h1>
-    <p style="font-size:24px;">GitHub Pages настроен нормально</p>
+<body>
+  <div class="page-shell">
+    <canvas id="heartCanvas" class="layer layer-heart" aria-hidden="true"></canvas>
+    <div id="tsparticles" class="layer layer-particles" aria-hidden="true"></div>
+    <div id="burstLayer" class="layer layer-burst" aria-hidden="true"></div>
+
+    <main class="hero" id="app">
+      <p class="eyebrow"></p>
+
+      <figure class="photo-frame is-hidden" id="photoFrame">
+        <img
+          id="momPhoto"
+          width="320"
+          height="320"
+          alt=""
+          decoding="async"
+        />
+      </figure>
+
+      <div class="title-wrap">
+        <span class="glow-heart" aria-hidden="true">❤</span>
+        <h1>с днем рождения <span class="accent">❤️</span></h1>
+      </div>
+
+      <p class="subtitle">
+        с наилучшими пожеланиями от Льваа:3
+      </p>
+
+      <div class="controls">
+        <button class="button button-primary" id="revealBtn" type="button">
+          тап тап
+        </button>
+
+        <button class="button button-ghost is-hidden" id="musicBtn" type="button" aria-pressed="false">
+          Включить музыку
+        </button>
+      </div>
+
+      <p class="reveal-message" id="revealMessage" hidden aria-live="polite"></p>
+
+      <p class="hint">мяу</p>
+    </main>
+
+    <audio id="bgMusic" preload="metadata" loop></audio>
+
+    <noscript>
+      <div class="noscript-card">
+        <h2>с днем рождения ❤️</h2>
+        <p>Этот сайт работает и без JavaScript, но анимации, частицы и музыка требуют включённого JS.</p>
+        <p>Даже без эффектов главное остаётся: я очень тебя люблю.</p>
+      </div>
+    </noscript>
   </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@tsparticles/shape-heart@4/tsparticles.shape.heart.min.js"></script>
+  <script defer src="script.js"></script>
 </body>
 </html>
